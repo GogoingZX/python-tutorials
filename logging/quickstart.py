@@ -27,14 +27,14 @@ if __name__ == "__main__":
         filemode="w",
         encoding="utf-8",
         level=logging.DEBUG,
-        format="[%(levelname)s] %(asctime)s - %(message)s",
+        format="%(asctime)s [%(levelname)s] <%(name)s> %(lineno)s: %(message)s",
             # https://docs.python.org/3/library/logging.html#logrecord-attributes
         datefmt=r"%m-%d %H:%M:%S"
             # https://docs.python.org/3/library/time.html#time.strftime
     )
 
-    logger = logging.getLogger(filename)
-    
+    logger = logging.getLogger(__name__)
+
     logger.info("Test Info")
     logger.debug("Test Debug")
     logger.debug("Test Warning")
